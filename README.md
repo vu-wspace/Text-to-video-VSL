@@ -67,10 +67,22 @@ Video VSL hoàn chỉnh (.mp4)
 - Chưa có bộ đánh giá định lượng trên câu ngoài từ điển (chỉ mới round-trip test trên chính từ điển).
 - Phần sinh video từ skeleton (thay vì video pixel gốc) mới dừng ở mức prototype, chưa hoàn thiện.
 
+## Tài liệu tham khảo liên quan
+
+Trong quá trình tìm hiểu, phát hiện một số công bố khoa học của tác giả Nguyễn Thị Bích Điệp (luận án tiến sĩ, Học viện Khoa học và Công nghệ) nghiên cứu đúng chủ đề dịch tự động ngôn ngữ ký hiệu Việt Nam — đáng tham khảo để đối chiếu hạn chế đã nêu và định hướng phát triển tiếp theo:
+
+- **Nguyen, T.B.D., Phung, T.N.** (2017). *Some issues on syntax transformation in Vietnamese sign language translation*. IJCSNS, Vol.17 No.6. — Chỉ ra cấu trúc ngữ pháp VSL là **Chủ ngữ → Tân ngữ → Vị ngữ** (khác thứ tự Chủ ngữ → Vị ngữ → Tân ngữ của tiếng Việt nói), cùng quy tắc riêng cho câu hỏi, câu phủ định, và thứ tự danh từ/số từ. Đây đúng là hướng giải quyết cho hạn chế "chưa xử lý ngữ pháp VSL" đã nêu ở trên.
+
+- **Nguyen, T.B.D., Phung, T.N., Vu, T.T.** (2017). *A rule-based method for text shortening in Vietnamese sign language translation*. Springer AISC, Vol. 672. — Đề xuất quy tắc rút gọn câu tiếng Việt trước khi chuyển sang VSL bằng cách loại bỏ giới từ, liên từ, trợ từ tình thái và thay thế từ đồng nghĩa — cùng hướng tiếp cận với bước xử lý OOV (stopword/fingerspelling) đã xây dựng trong project này, nhưng ở mức độ quy tắc ngữ pháp toàn diện hơn.
+
+- **Nguyen, T.B.D., Ho, T.T.** *Data Augmentation Techniques in automatic translation of Vietnamese Sign Language for the deaf*. — Dùng WordNet (quan hệ hypernym/hyponym) để sinh thêm dữ liệu câu Việt-VSL từ tập dữ liệu gốc, phục vụ huấn luyện các model dịch thống kê (Seq2Seq, Transformer) — hướng tham khảo trực tiếp cho việc "xây dựng bộ test câu tiếng Việt tự nhiên" đã nêu trong phần Hướng phát triển.
+
+- **Nguyen, T.B.D. et al.** *Special characters of Vietnamese sign language recognition System based on Virtual Reality Glove*. — Nghiên cứu nhận diện số và ký tự đặc biệt VSL bằng găng tay cảm biến (flex sensor + accelerometer), khác hướng tiếp cận thị giác máy tính (MediaPipe) của project này, nhưng cùng vấn đề: nhận diện chữ cái/ký tự đặc biệt tiếng Việt trong VSL.
+
 ## Hướng phát triển
 
 - Hoàn thiện pipeline sinh video từ skeleton (keypoints) để giảm phụ thuộc vào video pixel gốc và đồng nhất "hình ảnh người ký hiệu".
-- Nghiên cứu mô hình xử lý ngữ pháp VSL (word reordering/substitution) trước bước tra từ điển.
+- Nghiên cứu mô hình xử lý ngữ pháp VSL (word reordering/substitution, xem tài liệu tham khảo ở trên) trước bước tra từ điển.
 - Xây dựng bộ test câu tiếng Việt tự nhiên (ngoài từ điển) kèm đánh giá tỉ lệ OOV thực tế và đánh giá định tính từ người dùng VSL.
 
 ## Công nghệ sử dụng
