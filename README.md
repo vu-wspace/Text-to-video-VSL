@@ -2,6 +2,10 @@
 
 Hệ thống chuyển một câu tiếng Việt thành video Ngôn ngữ Ký hiệu Việt Nam (VSL — Vietnamese Sign Language), sử dụng phương pháp **dictionary-based concatenative synthesis**: tách câu thành chuỗi gloss (đơn vị ký hiệu), tra video ký hiệu tương ứng trong từ điển, rồi ghép nối lại thành một video hoàn chỉnh.
 
+## Demo / Nguồn chạy
+
+* Notebook gốc (chạy trên Kaggle, có kết quả thực tế): [kaggle.com/code/vuwspace/text-to-video-vsl](https://www.kaggle.com/code/vuwspace/text-to-video-vsl)
+
 ## Kiến trúc pipeline
 
 ```
