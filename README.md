@@ -5,7 +5,6 @@ Hệ thống chuyển một câu tiếng Việt thành video Ngôn ngữ Ký hi�
 ## Demo / Nguồn chạy
 
 * Notebook gốc (chạy trên Kaggle, có kết quả thực tế): [kaggle.com/code/vuwspace/text-to-video-vsl](https://www.kaggle.com/code/vuwspace/text-to-video-vsl)
-* Bối cảnh: Đồ án cuối kỳ / Hồ sơ ứng tuyển thực tập AI Engineering – Data Science
 * Video demo 1: [youtu.be/6upUo0nhmNs](https://youtu.be/6upUo0nhmNs) — video demo pixel gốc (output từ pipeline Video Synthesis, chưa qua xử lý skeleton).
 * Video demo 2: [youtu.be/uJvQVfxO9_Q](https://youtu.be/uJvQVfxO9_Q) — video demo overlay skeleton, vẽ pose/face/hand landmarks lên đúng video demo 1 ở trên (minh hoạ chất lượng trích xuất keypoints bằng MediaPipe Holistic Landmarker).
 
