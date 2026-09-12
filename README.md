@@ -6,7 +6,8 @@ Hệ thống chuyển một câu tiếng Việt thành video Ngôn ngữ Ký hi�
 
 * Notebook gốc (chạy trên Kaggle, có kết quả thực tế): [kaggle.com/code/vuwspace/text-to-video-vsl](https://www.kaggle.com/code/vuwspace/text-to-video-vsl)
 * Video demo 1: [youtu.be/6upUo0nhmNs](https://youtu.be/6upUo0nhmNs) — video demo pixel gốc (output từ pipeline Video Synthesis, chưa qua xử lý skeleton).
-* Video demo 2: [youtu.be/uJvQVfxO9_Q](https://youtu.be/uJvQVfxO9_Q) — video demo overlay skeleton, vẽ pose/face/hand landmarks lên đúng video demo 1 ở trên (minh hoạ chất lượng trích xuất keypoints bằng MediaPipe Holistic Landmarker).
+* Video demo 2: [youtu.be/uJvQVfxO9_Q](https://youtu.be/uJvQVfxO9_Q) — video test độc lập: overlay skeleton (pose/face/hand landmarks) cho video đầu tiên trong folder dataset, dùng để kiểm tra chất lượng trích xuất keypoints trên 1 video ký hiệu đơn lẻ.
+* Video demo 3: [youtu.be/ogfGKV5705U](https://youtu.be/ogfGKV5705U) — video demo overlay skeleton cho cùng câu với video demo 1 ở trên (kết quả đầy đủ của pipeline Gloss–Skeleton Dictionary khi ghép nhiều clip theo câu).
 
 ## Kiến trúc pipeline
 
@@ -45,7 +46,7 @@ Video VSL hoàn chỉnh (.mp4)
 
 ### 4. Gloss–Skeleton Dictionary (hướng mở rộng đã triển khai một phần)
 
-- Trích xuất **pose / face / hand landmarks** cho từng video bằng **MediaPipe Holistic Landmarker (Tasks API)**, lưu riêng dưới dạng JSON theo từng khung hình.
+- Trích xuất **pose/face/hand landmarks** cho từng video bằng **MediaPipe Holistic Landmarker (Tasks API)**, lưu riêng dưới dạng JSON theo từng khung hình.
 - Xử lý theo lô (batch) có khả năng resume (bỏ qua video đã trích xuất), tự động nén kết quả từng lô thành `.zip` để tải về theo phần — phù hợp với giới hạn thời gian/dung lượng của môi trường Kaggle.
 - Demo overlay: vẽ skeleton (pose/face/tay trái/tay phải) lên video gốc để kiểm tra chất lượng landmark.
 - Hướng đi tiếp theo (đã phác thảo, chưa hoàn thiện): ghép video ở dạng skeleton-only theo câu, phục vụ nghiên cứu dựa trên toạ độ khớp thay vì pixel thô — giúp giảm phụ thuộc vào hình ảnh người ký hiệu cụ thể.
